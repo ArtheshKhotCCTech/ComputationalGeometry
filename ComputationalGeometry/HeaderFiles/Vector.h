@@ -2,6 +2,7 @@
 
 #include<iostream>
 #include<array>
+#include"Core.h"
 
 namespace jmk {
 
@@ -33,10 +34,10 @@ namespace jmk {
 		Vector(coordinate_type _X, coordinate_type _Y) : coords({ _X, _Y}) {}
 
 		//Equality Check
-		bool operator==(const Vector < coordinate_type, dimension>);
+		bool operator==(const Vector < coordinate_type, dimension>) const;
 
 		//Not Equal Check
-		bool operator!=(const Vector < coordinate_type, dimension>);
+		bool operator!=(const Vector < coordinate_type, dimension>) const;
 
 		//Addition
 		Vector<coordinate_type, dimension> operator+ (const Vector < coordinate_type, dimension>&) const;
@@ -45,10 +46,10 @@ namespace jmk {
 		Vector<coordinate_type, dimension> operator- (const Vector < coordinate_type, dimension>&) const;
 
 		//Less than operator
-		bool operator<(const Vector < coordinate_type, dimension>&);
+		bool operator<(const Vector < coordinate_type, dimension>&) const;
 
 		//Greater than operator
-		bool operator>(const Vector < coordinate_type, dimension>&);
+		bool operator>(const Vector < coordinate_type, dimension>&) const;
 
 		//Indexing operator
 		coordinate_type operator[](int) const;
@@ -68,7 +69,7 @@ namespace jmk {
 
 	
 	template<class coordinate_type, size_t dimension>
-	inline bool Vector<coordinate_type, dimension>::operator==(const Vector<coordinate_type, dimension> _other)
+	inline bool Vector<coordinate_type, dimension>::operator==(const Vector<coordinate_type, dimension> _other) const
 	{
 		for (size_t i = 0; i < dimension; i++) {
 			if (!isEqualD(coords[i], _other.coords[i]))
@@ -78,7 +79,7 @@ namespace jmk {
 	}
 
 	template<class coordinate_type, size_t dimension>
-	inline bool Vector<coordinate_type, dimension>::operator!=(const Vector<coordinate_type, dimension> _other)
+	inline bool Vector<coordinate_type, dimension>::operator!=(const Vector<coordinate_type, dimension> _other) const
 	{
 		return !(*this == _other);
 	}
@@ -106,7 +107,7 @@ namespace jmk {
 	}
 
 	template<class coordinate_type, size_t dimension>
-	inline bool Vector<coordinate_type, dimension>::operator<(const Vector<coordinate_type, dimension>& _other)
+	inline bool Vector<coordinate_type, dimension>::operator<(const Vector<coordinate_type, dimension>& _other) const
 	{
 		for (size_t i = 0; i < dimension; i++) {
 			if (this->coords[i] < _other.coords[i]) {
@@ -120,7 +121,7 @@ namespace jmk {
 	}
 
 	template<class coordinate_type, size_t dimension>
-	inline bool Vector<coordinate_type, dimension>::operator>(const Vector<coordinate_type, dimension>& _other)
+	inline bool Vector<coordinate_type, dimension>::operator>(const Vector<coordinate_type, dimension>& _other) const
 	{
 		for (size_t i = 0; i < dimension; i++) {
 			if (this->coords[i] > _other.coords[i]) {
