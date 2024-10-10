@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\ArtheshWorkplace\CppProjects\ComputationalGeometry\ComputationalGeometry\HeaderFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,7 +129,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFiles\Core.h" />
+    <ClInclude Include="HeaderFiles\GeoUtils.h" />
+    <ClInclude Include="HeaderFiles\Point.h" />
     <ClInclude Include="HeaderFiles\Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SourceFiles\GeoUtils.cpp" />
+    <ClCompile Include="SourceFiles\main.cpp" />
+    <ClCompile Include="SourceFiles\Vector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
